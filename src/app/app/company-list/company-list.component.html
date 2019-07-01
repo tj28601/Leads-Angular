@@ -1,0 +1,9 @@
+<p>
+  company-list works!
+</p>
+
+<li *ngFor="let company of companies">
+  <a routerLink="/companies/{{company.id}}">
+    {{company.name}}
+  </a>
+</li>
