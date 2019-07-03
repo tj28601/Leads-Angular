@@ -1,9 +1,38 @@
-<p>
-  company-list works!
-</p>
+<div class="container">
+  <div class="row w-100">
+    <div class="col-4">
+      <div class="col">
+      COMPANY
+      </div>
+      <span *ngFor="let company of companies">
+        <div class="col">
+          <a routerLink="/companies/{{company.id}}">
+            {{company.name}}
+          </a>
+        </div>
+      </span>
+    </div>
 
-<li *ngFor="let company of companies">
-  <a routerLink="/companies/{{company.id}}">
-    {{company.name}}
-  </a>
-</li>
+    <div class="col-4">
+      <div class="col">
+        HQ
+      </div>
+      <span *ngFor="let company of companies">
+        <div class="col">
+          {{company.hq}}
+        </div>
+      </span>
+    </div>
+
+    <div class="col-4">
+      <div class="col">
+        INDUSTRY
+      </div>
+      <span *ngFor="let company of companies">
+        <div class="col">
+          {{company.industry}}
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
