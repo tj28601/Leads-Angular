@@ -1,0 +1,15 @@
+<p>
+  deal-detail works!
+</p>
+
+  <div *ngIf="model">
+    <mat-form-field>
+      <input matInput
+             [(ngModel)]="model.size"
+             placeholder="Size"
+            (change)="debounceSave($event)">
+    </mat-form-field>
+  </div>
+
+
+<button (click)="save()">Save</button>
