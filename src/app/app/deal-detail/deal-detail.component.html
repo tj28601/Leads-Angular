@@ -2,6 +2,15 @@
   deal-detail works!
 </p>
 
+<div *ngIf="model">
+  <mat-form-field>
+    <input matInput
+           [(ngModel)]="model.description"
+           placeholder="Description"
+          (change)="debounceSave($event)">
+  </mat-form-field>
+</div>
+
   <div *ngIf="model">
     <mat-form-field>
       <input matInput
@@ -11,5 +20,14 @@
     </mat-form-field>
   </div>
 
-
-<button (click)="save()">Save</button>
+  <div *ngIf="model">
+    <mat-form-field>
+      <input matInput
+             [matDatepicker]="picker"
+             placeholder="Close date"
+             [(ngModel)]="model.close_date"
+             (dateChange)="debounceSave($event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>

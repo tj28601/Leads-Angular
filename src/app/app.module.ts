@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatButtonModule, MatCheckboxModule, MatSnackBarModule } from '@angular/material';
+import { MatInputModule, MatButtonModule, MatCheckboxModule, MatSnackBarModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -31,13 +31,17 @@ import { UpdateMessage } from './app/deal-detail/deal-detail.component';
     MatButtonModule,
     MatSnackBarModule,
     MatCheckboxModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule
   ],
+
+
   entryComponents: [UpdateMessage],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
