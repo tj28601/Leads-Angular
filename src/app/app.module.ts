@@ -38,8 +38,6 @@ import { UpdateMessage } from './app/deal-detail/deal-detail.component';
     ReactiveFormsModule,
     FormsModule
   ],
-
-
   entryComponents: [UpdateMessage],
   providers: [MatDatepickerModule],
   bootstrap: [AppComponent]
