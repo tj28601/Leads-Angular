@@ -31,17 +31,26 @@ export class DealDetailComponent implements OnInit {
     this.getDeal();
   }
 
+  setDealDate(charzard: any) {
+    let badDate = new Date(charzard.close_date);
+    this.model.close_date = new Date(badDate.setDate(badDate.getDate() + 1))
+  }
+
   getDeal(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.dealService.getDeal(id)
-      .subscribe(res => this.model = res);
+      .subscribe(res => {
+        this.model = res;
+        this.setDealDate(this.model);
+      });
   }
 
   debounceSave(event: any) {
+    // debugger;
     this.dealFormUpdate.pipe(
       debounceTime(4000),
       distinctUntilChanged());
-
+// debugger;
     this.dealService.updateDeal(this.model)
       .subscribe();
       this.openSnackBar();

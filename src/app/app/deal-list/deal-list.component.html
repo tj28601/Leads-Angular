@@ -22,6 +22,7 @@
           <a routerLink="/deals/{{deal.id}}">
             {{deal.description}}
           </a>
+          <button (click)="delete(deal)">foo</button>
         </div>
       </span>
     </div>
@@ -60,3 +61,16 @@
     </div>
   </div>
 </div>
+
+<form [formGroup]="newDealForm">
+  <label>
+    First Name:
+    <input type="text" formControlName="description">
+  </label>
+
+  <label>
+    Company ID:
+    <input type="text" formControlName="company_id">
+  </label>
+  <button (click)="add()">submit here</button>
+</form>

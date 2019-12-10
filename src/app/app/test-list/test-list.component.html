@@ -1,0 +1,11 @@
+<p>
+  test-list works!
+</p>
+
+<span *ngFor="let deal of deals">
+  <div class="col">
+    <a routerLink="/deals/{{deal.id}}">
+      {{deal.description}}
+    </a>
+  </div>
+</span>

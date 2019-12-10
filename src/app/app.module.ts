@@ -14,6 +14,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { FormsModule } from '@angular/forms';
 import { UpdateMessage } from './app/deal-detail/deal-detail.component';
+import { TestDetailComponent } from './app/test-detail/test-detail.component';
+import { DealDetailContainerComponent } from './app/deal-detail-container/deal-detail-container.component';
+import { TestListComponent } from './app/test-list/test-list.component';
+import { DealListContainerComponent } from './app/deal-list-container/deal-list-container.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { UpdateMessage } from './app/deal-detail/deal-detail.component';
     CompanyDetailComponent,
     DealListComponent,
     DealDetailComponent,
-    UpdateMessage
+    UpdateMessage,
+    TestDetailComponent,
+    DealDetailContainerComponent,
+    TestListComponent,
+    DealListContainerComponent
   ],
   imports: [
     BrowserModule,
