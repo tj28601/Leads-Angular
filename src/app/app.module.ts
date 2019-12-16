@@ -19,6 +19,14 @@ import { DealDetailContainerComponent } from './app/deal-detail-container/deal-d
 import { TestListComponent } from './app/test-list/test-list.component';
 import { DealListContainerComponent } from './app/deal-list-container/deal-list-container.component';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule, Actions } from '@ngrx/effects';
+import { dealReducer }  from './store/reducers/deal.reducer';
+import { DealEffect } from './store/effects/deal.effects';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +52,13 @@ import { DealListContainerComponent } from './app/deal-list-container/deal-list-
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({deals: dealReducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    }),
+    EffectsModule.forRoot([DealEffect])
   ],
   entryComponents: [UpdateMessage],
   providers: [MatDatepickerModule],
